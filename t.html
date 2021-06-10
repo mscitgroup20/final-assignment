@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script class="jsbin" src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+<meta charset=utf-8 />
+<title>JS Bin</title>
+<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<style>
+  article, aside, figure, footer, header, hgroup, 
+  menu, nav, section { display: block; }
+</style>
+</head>
+<body>
+  <form>
+    <h1>Please enter data</h1>
+    <input id="title" type="text" placeholder="Title" />
+    <input id="name" type="text" placeholder="Name" />
+    <input id="tickets" type="text" placeholder="Tickets" />
+    <input type="button" value="Save/Show" onclick="insert()" />
+  </form>
+
+  <div id="display">
+     <table class="display" border="1"></table>
+  </div>
+
+
+  <script type="text/javascript">
+var titles  = [];
+var names   = [];
+var tickets = [];
+
+var titleInput  = document.getElementById("title");
+var nameInput   = document.getElementById("name");
+var ticketInput = document.getElementById("tickets");
+
+var messageBox  = document.getElementById("display");
+
+function insert ( ) {
+ titles.push( titleInput.value );
+ names.push( nameInput.value );
+ tickets.push( ticketInput.value );
+
+ clearAndShow();
+}
+
+function clearAndShow () {
+  // Clear our fields
+  titleInput.value = "";
+  nameInput.value = "";
+  ticketInput.value = "";
+
+  // Show our output
+  messageBox.innerHTML = "";
+  messageBox.innerHTML += "<tr>";
+  messageBox.innerHTML += "<td>Titles</td>";
+  messageBox.innerHTML += "<td>Name</td>";
+  messageBox.innerHTML += "<td>Tickets</td>";
+  messageBox.innerHTML += "</tr>";
+  for(i = 0; i <= titles.length - 1; i++)
+  {
+    messageBox.innerHTML += "<tr>";
+    
+    messageBox.innerHTML += "<td>" + titles[i]+ "</td>";
+    messageBox.innerHTML += "<td>" + names[i] + "</td>";
+    messageBox.innerHTML += "<td>" + tickets[i]+ "</td>";
+    messageBox.innerHTML += "</tr>";
+  }
+}
+</script>
+</body>
+</html>
+
