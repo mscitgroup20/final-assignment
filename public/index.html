@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+
+<body>
+    <div class="lists">
+        <div class="list">
+            <div class="list_title">
+                <h1>Task Management System</h1>
+            </div>
+
+            <div class="list-body" id="list-body">
+            </div>
+            <div class="list_footer">
+                <button id="add-task" type="button" name="add-button" onclick="openModal('New')" class="button">
+                    Add task
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal_card">
+            <div id="modal_card_title" class="modal_card_title">Add New Task</div>
+            <div class="modal_card_body">
+                <form class="modal_form" onsubmit="myFunction(event)">
+                    <label for="task-name">Task tile:
+                        <input type="text" id="task-name" name="task-name" value="" required />
+                    </label>
+                    <label for="task-description">Description:
+                        <textarea name="task-description" id="task-description" rows="2" cols="20" required></textarea>
+                    </label>
+                    <label for="task-priority">Priority:
+                        <select id="task-priority" class="form-select" name="task-priority" required>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </label>
+
+                    <label for="task-expiration">Start_Date_Time:
+                        <input id="task-start-date" type="date" name="task-start-date" value="" required />
+                    </label>
+                    <input id="task-id" type="hidden" name="task-id" value="new" />
+
+                    <label for="task-due-date">Due_Date_Time:
+                        <input id="task-due-date" type="date" name="task-due-date" value="" required />
+                    </label>
+                    <input id="task-id" type="hidden" name="task-id" value="new" />
+
+                    <label for="task-expiration">End_Date_time
+                        <input id="task-expiration" type="date" name="task-expiration" value="" required />
+                    </label>
+                    <input id="task-id" type="hidden" name="task-id" value="new" />
+                    <label for="task-assignperson">Task tile:
+                        <input type="text" id="task-assignperson" name="task-assignperson" value="" required />
+                    </label>
+
+                    <div class="form_button-container">
+                        <button type="button" name="send-form" class="button default edit" onclick="closeModal()">
+                            Cancel</button>
+                        <button type="submit" name="send-form" class="button">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--js file -->
+    <script src="script/script.js"></script>
+</body>
+
+</html>
